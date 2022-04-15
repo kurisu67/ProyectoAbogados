@@ -1,0 +1,100 @@
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 25%;
+  background-color: #333333;
+  overflow: auto;
+}
+
+il a {
+  display: block;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+
+il a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+
+.tabla {
+    color: #f1f1f1;
+}
+
+
+
+.column {
+  float: left;
+  width: auto;
+
+
+}
+
+.border {
+margin-top:25px;
+border-radius: 8px;
+float: left;
+
+}
+
+.formulario {
+  margin-block-start: 1em;
+  display: grid;
+  border: white 2px solid;
+  background-color:#333333;
+  max-width: 1000px;
+  
+}
+.items_ejemple{
+  padding-left:10px;
+  margin-top: 10px;
+  
+}
+.items_ejemple input {
+  margin-top: 10px;
+  min-height:30px;
+  max-height:30px;
+  
+}
+
+
+textarea {
+    resize: none;
+}
+
+.button {
+  padding: 10px 24px;
+}
+
+
+
+.descripcion {
+  display: inline-grid;
+  margin-top: 10px;
+}
+
+.fake-textarea {
+  border: 1px solid white;
+  background-color: white;
+  color:black;
+  margin-top: 10px;
+  min-height:34px !important;
+  max-width: 38vh !important; 
+  min-width: 143px;
+  
+}
+
+.fake-textarea:empty::before {
+
+  content: "Escribe aquí...";
+  }
+
+  #description {
+    display: none;
+  }

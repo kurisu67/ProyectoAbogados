@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    {% load static %}
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'Holadjango/CSS/style.css' %}">
+    
+</head>
+<body>
+    <section class="register-photo">
+    <div class="form-container">
+        <div class="image-holder"></div>
+        
+        <form method="post" action="{% url 'demandas' %}">
+            {% csrf_token %}
+            <h2 class="text-center"><strong>INICIAR</strong> SESION</h2>
+            <div class="mb-3"><input type="email" class="form-control" name="email" placeholder="Email" required="Email" /></div>
+            <div class="mb-3"><input type="password"required="password" class="form-control" name="password" placeholder="Contraseña" /></div>
+            
+            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" >Ingresar</button></div>
+          <a class="already" href="{% url 'rest' %}">Olvidate tu contraseña?</a>
+        </form>
+    </div>
+      
+</section>
+
+  
+</body> 
+</html>
+
+

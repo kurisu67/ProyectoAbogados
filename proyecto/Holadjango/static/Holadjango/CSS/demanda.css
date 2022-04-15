@@ -1,0 +1,171 @@
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 25%;
+  background-color: #333333;
+  overflow: auto;
+}
+
+il a {
+  display: block;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+
+il a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+
+.tabla {
+    color: #f1f1f1;
+}
+.id_demanda{
+  margin-top: 10px;
+}
+.id_demanda input{
+    min-height:34px !important;
+    max-height:38px !important;
+    min-width: 136px;
+    max-width: 137px !important;; 
+}
+.fecha{
+  margin-top: 10px;
+}
+.fecha input {
+    min-height:36px !important;
+    max-height:40px !important;
+    min-width: 140px;
+    max-width: 140px;
+
+}
+.hora{
+  margin-top: 10px;
+}
+.hora input {
+    min-height:36px !important;
+    max-height:40px !important;
+    width: 145px;
+    max-width: 140px;
+
+}
+.tipo_demanda{
+  margin-top: 10px;
+}
+.tipo_demanda select{
+    min-height:40px !important;
+    max-height:40px !important;
+    width: 145px;
+    max-width: 145px;
+}
+
+
+.column {
+  float: left;
+  width: auto;
+
+
+}
+
+.border {
+margin-top:25px;
+border-radius: 8px;
+float: left;
+
+}
+
+.formulario {
+  margin-block-start: 1em;
+  display: grid;
+  border: white 2px solid;
+  background-color:#333333;
+  max-width: 1000px;
+  
+}
+.items_ejemple{
+  padding-left:10px;
+  margin-top: 10px;
+  
+}
+.items_ejemple input {
+  margin-top: 10px;
+  min-height:30px;
+  max-height:30px;
+  
+}
+.items_ejemple select {
+  margin-top: 10px;
+  
+}
+
+textarea {
+    resize: none;
+}
+
+
+
+.region {
+  min-width: 20px; 
+  min-height: 20px;
+}
+
+.button {
+  padding: 10px 24px;
+}
+
+
+.region-1{
+  padding-left:10px;
+  margin-top: 10px;
+}
+
+.region-1 select{
+  min-height:36px !important;
+  max-height:36px !important;
+}
+
+.id-caso {
+  margin-top: 10px;
+}
+
+
+
+
+/**/
+.descripcion {
+  display: inline-grid;
+  margin-top: 10px;
+}
+
+.fake-textarea {
+  border: 1px solid white;
+  background-color: white;
+  color:black;
+  margin-top: 10px;
+  min-height:34px !important;
+  max-width: 38vh !important; 
+  min-width: 143px;
+  
+}
+
+.fake-textarea:empty::before {
+
+  content: "Escribe aquí...";
+  }
+#description {
+  display: none;
+}
+
+
+.disen{
+  display:flex; 
+  flex-wrap: wrap; 
+  margin-top: 10px;
+}

@@ -1,0 +1,8 @@
+<form action="/nombre/" method="post">
+    {% csrf_token %}
+    {{ form.nombre }}
+    <div class="container" style="background-color:red; color:gray">
+        {{form.apellido}}
+    </div>
+    <input type="submit" value="Submit">
+</form>

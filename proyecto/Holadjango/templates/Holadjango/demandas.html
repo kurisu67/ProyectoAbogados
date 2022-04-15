@@ -1,0 +1,167 @@
+{% extends "Holadjango/base.html" %}  
+
+
+
+    {% load static %}
+
+
+<head>
+  {% block content %} 
+  <title>Demandas</title>
+  <link rel="stylesheet" href="{% static 'Holadjango/CSS/demanda.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <ul class="border">
+      <il><a href="{% url 'demandas' %}">Nueva Demanda</a></il>
+      <il><a href="{% url 'listas' %}">Lista Demandas</a></il>
+      <il><a href="{% url 'ultimademanda' %}">Ultima Demanda</a></il>
+      <il><a href="#Reabrir caso">Reabrir Demanda</a></il>
+      <il><a href="{% url 'index' %}">Cerrar Sesion</a></il>
+    </ul>
+
+
+    <div class="container formulario" style="display:grid;">
+      <form method="POST">
+      {% csrf_token %}
+
+        <div>
+          <h1 style="color: white; text-align: center;">Crear Demanda</h1>
+        </div>
+        <div class="tabla">
+          <fieldset>
+
+            <legend>Formulario</legend>
+
+            <div class="column">
+              <div class="disen">
+              <div class="items_ejemple id_demanda">
+                <label>Id. de la demanda:</label>
+                <br>
+
+
+                <label>{{demandax}}</label>
+              </div>
+
+
+              <div class="items_ejemple tipo_demanda">
+                <label{{form_demanda.nombre_tipo}}>Tipo de demanda:</label>
+                <br>
+               {{form.nombre_tipo}}
+              </div>
+
+
+            
+
+
+            <div class="items_ejemple container descripcion">
+              <div >
+                <label{{form_demanda.Descripcion}}>Descripcion:</label>
+              </div>
+              <div contenteditable class="fake-textarea" oninput="document.querySelector('#description').textContent = this.innerText">
+              </div>
+
+              <textarea name="Descripcion:" id="description"></textarea>
+            </div>
+</div>
+          </fieldset>
+
+          <fieldset>
+
+            <legend>Demandante</legend>
+
+            <div class="disen">
+
+              <div class="items_ejemple">
+                <label >Rut:</label>
+                <br>
+               {{form.rut}}
+              </div>
+              <div class="items_ejemple">
+                <label>Nombre:</label>
+                <br>
+               {{form.nombre}}
+              </div>
+
+              <div class="items_ejemple">
+                <label>Apellido:</label>
+                <br>
+             {{form.apellido}}
+              </div>
+              <div class="items_ejemple">
+                <label>Teléfono:</label>
+                <br>
+               {{form.telefono}}
+
+              </div>
+
+
+              <div class="items_ejemple">
+                <label>Comuna:</label>
+                <br>
+               {{form.comuna}}
+              </div>
+              <div class="items_ejemple region-1">
+                <label>Region:</label>
+                <br>
+               {{form.region}}
+              </div>
+
+            </div>
+          </fieldset>
+
+          <fieldset>
+
+          <legend>Demandado</legend>
+
+          <div class="disen">
+
+            <div class="items_ejemple">
+              <label>Rut:</label>
+              <br>
+             {{form.rutdemando}}
+            </div>
+            <div class="items_ejemple">
+              <label>Nombre:</label>
+              <br>
+             {{form.nombredemando}}
+            </div>
+
+            <div class="items_ejemple">
+              <label>Apellido:</label>
+              <br>
+            {{form.apellidodemando}}
+            </div>
+            <div class="items_ejemple">
+              <label>Teléfono:</label>
+              <br>
+             {{form.telefonodemando}}
+
+            </div>
+
+
+            <div class="items_ejemple">
+              <label>Comuna:</label>
+              <br>
+            {{form.comunademando}}
+            </div>
+            <div class="items_ejemple region-1">
+              <label>Region:</label>
+              <br>
+             {{form.regiondemando}}
+            </div>
+
+          </div>
+        </fieldset>
+        </div>
+        <div style="text-align:center;">
+          <input class="button" type="submit" value="Enviar demanda">
+        </div>
+    </div>
+
+    </form>
+
+  </div>
+</body>
+  {% endblock %} 

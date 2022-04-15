@@ -1,0 +1,73 @@
+
+
+{% extends "Holadjango/base.html" %}  
+
+
+
+    {% load static %}
+  
+  <head>
+    {% block content %} 
+    <title>Informes</title>
+    <link rel="stylesheet" href="{% static 'Holadjango/CSS/Informe.css' %}">
+    
+  
+  </head>
+  
+
+
+
+
+
+
+<body>
+
+
+  <div class="container">
+    <ul class="border">
+      <il><a href="{% url 'informe' %}">Nuevo Informe</a></il>
+      <il><a href="{% url 'listas' %}">Lista Informe</a></il>
+      <il><a href="{% url 'ultimademanda' %}">Ultimo Informe</a></il>
+      <il><a href="#Reabrir caso">Reabrir Informe</a></il>
+      <il><a href="{% url 'index' %}">Cerrar Sesion</a></il>
+    </ul>
+  
+
+      <div class="container formulario" style="display:grid;">
+      <form method="POST" action="#">
+        {% csrf_token %}
+        <div>
+          <h1 style="color: white; text-align: center;">Crear Informe</h1>
+        </div>
+        <div class="tabla">
+          <fieldset>
+
+            <legend>Formulario</legend>
+
+            <div class="column">
+<div class="disen">
+
+              <div class="items_ejemple container descripcion">
+              
+                {{form}}
+
+              <textarea name="Descripcion:"  id="description"></textarea>
+            </div>
+            </div>
+
+       </div>
+             
+
+          </fieldset>
+
+        </div>
+        <div style="text-align:center;">
+          <input class="button" type="submit" value="Enviar Informe">
+        </div>
+    </div>
+
+    </form>
+  </div>
+</body>
+
+{% endblock %} 
