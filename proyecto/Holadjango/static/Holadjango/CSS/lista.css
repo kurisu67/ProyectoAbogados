@@ -54,8 +54,10 @@ table th {
     padding-right: 9px;
     padding-top: 12px;
     padding-bottom: 12px;
+    
 }
 
 tr:hover {
     background-color: #04AA6D;
 }
+

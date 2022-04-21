@@ -1,0 +1,65 @@
+{% extends "Holadjango/base.html" %}  
+
+
+
+    {% load static %}
+
+
+<head>
+  {% block content %} 
+    <title>Listas</title>
+    <link rel="stylesheet" href="{% static 'Holadjango/CSS/lista.css' %}">
+
+</head>
+
+
+<body>
+
+
+
+
+    <div class="container">
+    <ul class="border">
+      <il><a href="{% url 'informe' %}">Nuevo Informe</a></il>
+      <il><a href="{% url 'listas_informes' %}">Lista Informe</a></il>
+      <il><a href="{% url 'ultimademanda' %}">Ultimo Informe</a></il>
+      <il><a href="{% url 'reabririnforme' %}">Reabrir Informe</a></il>
+      <il><a href="{% url 'index' %}">Cerrar Sesion</a></il>
+    </ul>
+    </div>
+
+
+    <table class="default">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Creado</th>
+            <th>Actualizado</th>
+          </tr>
+        </thead>
+            {% for informe2 in  listaas %}
+
+
+    <tbody>
+            <tr>
+                <th>{{informe2.id_informe}}</th>
+                <th>{{informe2.titulo}}</th>
+                <th>{{informe2.descripcion}}</th>
+                <th>{{informe2.created}}</th>
+                <th>{{informe2.updated}}</th>
+            </tr>
+            {% endfor %}
+       
+            
+        </table>
+       
+
+
+
+
+
+</body>
+
+{% endblock %} 

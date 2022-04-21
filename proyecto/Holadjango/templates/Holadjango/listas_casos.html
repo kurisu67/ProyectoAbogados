@@ -1,0 +1,65 @@
+{% extends "Holadjango/base.html" %}  
+
+
+
+    {% load static %}
+
+
+<head>
+  {% block content %} 
+    <title>Listas</title>
+    <link rel="stylesheet" href="{% static 'Holadjango/CSS/lista.css' %}">
+
+</head>
+
+
+<body>
+
+
+
+
+    <div class="container">
+    <ul class="border">
+      <il><a href="{% url 'casos' %}">Nuevo Caso</a></il>
+      <il><a href="{% url 'listas_casos' %}">Lista Casos</a></il>
+      <il><a href="{% url 'ultimademanda' %}">Ultimo Caso</a></il>
+      <il><a href="{% url 'reabrircaso'%}">Reabrir Caso</a></il>
+      <il><a href="{% url 'index' %}">Cerrar Sesion</a></il>
+    </ul>
+    </div>
+
+
+    <table class="default">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Cantidad de demandas</th>
+            <th>Creado</th>
+            <th>Actualizado</th>
+          </tr>
+        </thead>
+            {% for caso in  listaas %}
+
+
+    <tbody>
+            <tr>
+                <th>{{caso.id_caso}}</th>
+                <th>{{caso.titulo}}</th>
+                <th>{{caso.cantidad_demandas}}</th>
+                <th>{{caso.created}}</th>
+                <th>{{caso.updated}}</th>
+            </tr>
+            {% endfor %}
+       
+            
+        </table>
+       
+
+
+
+
+
+</body>
+
+{% endblock %} 

@@ -1,0 +1,67 @@
+{% extends "Holadjango/base.html" %}  
+
+
+
+    {% load static %}
+
+
+<head>
+  {% block content %} 
+    <title>Listas</title>
+    <link rel="stylesheet" href="{% static 'Holadjango/CSS/lista.css' %}">
+
+</head>
+
+
+<body>
+
+
+
+
+    <div class="container">
+    <ul class="border">
+      <il><a href="{% url 'demandas' %}">Nueva Demanda</a></il>
+      <il><a href="{% url 'listas_demandas' %}">Lista Demandas</a></il>
+      <il><a href="{% url 'ultimademanda' %}">Ultima Demanda</a></il>
+      <il><a href="{% url 'reabrirdemanda' %}">Reabrir demanda</a></il>
+      <il><a href="{% url 'index' %}">Cerrar Sesion</a></il>
+    </ul>
+    </div>
+
+
+    <table class="default">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Tipo Demanda</th>
+            <th>Demandante</th>
+            <th>Creado</th>
+            <th>Actualizado</th>
+          </tr>
+        </thead>
+            {% for demanda in  listaas %}
+
+
+    <tbody>
+            <tr>
+                <th>{{demanda.id_demanda}}</th>
+                <th>{{demanda.titulo}}</th>
+                <th>{{demanda.nombre_tipo}}</th>
+                <th>{{demanda.nombre}} {{demanda.apellido}}</th>
+                <th>{{demanda.created}}</th>
+                <th>{{demanda.updated}}</th>
+            </tr>
+            {% endfor %}
+       
+            
+        </table>
+       
+
+
+
+
+
+</body>
+
+{% endblock %} 

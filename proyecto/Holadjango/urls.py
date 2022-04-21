@@ -6,8 +6,20 @@ urlpatterns = [
     path('demandas/', views.demandas, name="demandas"),
     path('informe/', views.informe, name="informe"),
     path('casos/', views.casos, name="casos"),
-    path('listas/', views.listas, name="listas"),
+    path('listas_casos/', views.listas_casos, name="listas_casos"),
+    path('listas_demandas/', views.listas_demandas, name="listas_demandas"),
+    path('reabririnforme/', views.reabririnforme, name="reabririnforme"),
+    path('listas_informes/', views.listas_informes, name="listas_informes"),
+    path('modificarinforme/<id>/', views.modificarinforme, name="modificarinforme"),
     path('rest/', views.rest, name="rest"),
     path('ultimademanda/', views.ultimademanda, name="ultimademanda"),
-    path('nombre', views.get_nombre, name="nombre")
+    path('modificarcaso/<id>/', views.modificarcaso, name="modificarcaso"),
+    path('reabrircaso/', views.reabrircaso, name="reabrircaso"),
+    path('eliminarcaso/<id>/', views.eliminarcaso, name="eliminarcaso"),
+    path('reabrirdemanda/', views.reabrirdemanda, name="reabrirdemanda"),
+    path('modificardemanda/<id>/', views.modificardemanda, name="modificardemanda"),
+    path('eliminardemanda/<id>/', views.eliminardemanda, name="eliminardemanda"),
+    path('eliminarinforme/<id>/', views.eliminarinforme, name="eliminarinforme"),
+    
+    
 ]

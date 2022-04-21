@@ -9,14 +9,15 @@ tipo= [
     (2, "Segundo tipo"),
     (3, "Tercer tipo")
 ]
-class informe(models.Model):
-    id_informe=models.BigAutoField(primary_key=True) 
+class informe2(models.Model):
+    id_informe=models.BigAutoField(primary_key=True)
+    titulo=models.CharField(max_length=20)
     descripcion=models.CharField(max_length=1000)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now_add=True)
     class Meta:
-        verbose_name= 'informe'
-        verbose_name_plural= 'informes'
+        verbose_name= 'informe2'
+        verbose_name_plural= 'informes2'
 
         
     def __str__(self):
@@ -24,6 +25,7 @@ class informe(models.Model):
 
 class caso(models.Model):
     id_caso=models.BigAutoField(primary_key=True)
+    titulo=models.CharField(max_length=20)
     cantidad_demandas=models.CharField(max_length=50)
     descripcion=models.CharField(max_length=1000)
     created=models.DateTimeField(auto_now_add=True)
@@ -34,12 +36,13 @@ class caso(models.Model):
 
         
     def __str__(self):
-        return str(self.id_caso)
-    ##tipo de demanda
+        return str(self.id_caso)    
+
 
 
 class demanda(models.Model):
-    id_demanda=models.AutoField(primary_key=True)
+    id_demanda=models.BigAutoField(primary_key=True)
+    titulo=models.CharField(max_length=20)
     nombre_tipo=models.CharField(max_length=200)
     Descripcion=models.CharField(max_length=1000,default="")
     rut=models.CharField(max_length=10,default="")
@@ -54,7 +57,8 @@ class demanda(models.Model):
     telefonodemando=models.CharField(max_length=12,default="")
     comunademando=models.CharField(max_length=50,default="")
     regiondemando=models.CharField(max_length=50)
-   
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now_add=True)
 
     
     class Meta:
