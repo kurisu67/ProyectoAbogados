@@ -10,6 +10,21 @@
     <title>Listas</title>
     <link rel="stylesheet" href="{% static 'Holadjango/CSS/lista.css' %}">
 
+    <style>
+      .button_1{
+    padding-top: 10px;
+    text-decoration: none;
+    background-color: #bfb941;
+    border-radius: 6px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 5px;
+    color: rgb(0, 0, 0);
+  }
+
+      </style>
+
 </head>
 
 
@@ -24,7 +39,7 @@
       <il><a href="{% url 'listas_informes' %}">Lista Informe</a></il>
       <il><a href="{% url 'ultimademanda' %}">Ultimo Informe</a></il>
       <il><a href="{% url 'reabririnforme' %}">Reabrir Informe</a></il>
-      <il><a href="{% url 'index' %}">Cerrar Sesion</a></il>
+      <il><a href="{% url 'Logout' %}">Cerrar Sesion</a></il>
     </ul>
     </div>
 
@@ -33,10 +48,12 @@
         <thead>
           <tr>
             <th>Id</th>
+            <th>Titulo Demanda</th>
             <th>Titulo</th>
             <th>Descripcion</th>
             <th>Creado</th>
             <th>Actualizado</th>
+            <th>Opciones</th>
           </tr>
         </thead>
             {% for informe2 in  listaas %}
@@ -45,10 +62,14 @@
     <tbody>
             <tr>
                 <th>{{informe2.id_informe}}</th>
+                <th>{{informe2.id_demanda}}</th>
                 <th>{{informe2.titulo}}</th>
                 <th>{{informe2.descripcion}}</th>
                 <th>{{informe2.created}}</th>
                 <th>{{informe2.updated}}</th>
+                <th>
+                  <a  class="button_1" href="{% url 'verinforme' informe2.id_informe %}">Ver</a>  
+                </th>
             </tr>
             {% endfor %}
        

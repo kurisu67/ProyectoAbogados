@@ -18,7 +18,7 @@
       <il><a href="{% url 'listas_demandas' %}">Lista Demandas</a></il>
       <il><a href="{% url 'ultimademanda' %}">Ultima Demanda</a></il>
       <il><a href="{% url 'reabrirdemanda' %}">Reabrir demanda</a></il>
-      <il><a href="{% url 'Logout' %}">Cerrar Sesion</a></il> 
+      <il><a href="{% url 'Logout' %}">Cerrar Sesion</a></il>
     </ul>
 
 
@@ -48,21 +48,16 @@
                {{form.titulo}}
               </div>
 
-            <div class="items_ejemple descripcion">
+            
+
+
+            <div class="items_ejemple container descripcion">
               <div >
                 <label>Descripcion:</label>
               </div>
     
                 
                 {{form.Descripcion}}
-            </div>
-            <div class="items_ejemple descripcion">
-              <div >
-                <label>Titulo Caso:</label>
-              </div>
-    
-                
-                {{form.id_caso}}
             </div>
 </div>
           </fieldset>
@@ -156,8 +151,9 @@
         </fieldset>
         </div>
         <div style="text-align:center;">
-          <input class="button" type="submit" value="Enviar demanda">
+          <il><a href="{% url 'listas_demandas' %}">Volver</a></il>
         </div>
+
     </div>
 
     </form>

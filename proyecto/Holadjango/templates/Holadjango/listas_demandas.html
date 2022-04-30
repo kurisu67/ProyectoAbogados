@@ -9,6 +9,20 @@
   {% block content %} 
     <title>Listas</title>
     <link rel="stylesheet" href="{% static 'Holadjango/CSS/lista.css' %}">
+    <style>
+      .button_1{
+    padding-top: 10px;
+    text-decoration: none;
+    background-color: #bfb941;
+    border-radius: 6px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 5px;
+    color: rgb(0, 0, 0);
+  }
+
+      </style>
 
 </head>
 
@@ -24,7 +38,7 @@
       <il><a href="{% url 'listas_demandas' %}">Lista Demandas</a></il>
       <il><a href="{% url 'ultimademanda' %}">Ultima Demanda</a></il>
       <il><a href="{% url 'reabrirdemanda' %}">Reabrir demanda</a></il>
-      <il><a href="{% url 'index' %}">Cerrar Sesion</a></il>
+      <il><a href="{% url 'Logout' %}">Cerrar Sesion</a></il>
     </ul>
     </div>
 
@@ -33,11 +47,13 @@
         <thead>
           <tr>
             <th>Id</th>
+            <th>Titulo Caso</th>
             <th>Titulo</th>
             <th>Tipo Demanda</th>
             <th>Demandante</th>
             <th>Creado</th>
             <th>Actualizado</th>
+            <th>Opciones</th>
           </tr>
         </thead>
             {% for demanda in  listaas %}
@@ -46,12 +62,18 @@
     <tbody>
             <tr>
                 <th>{{demanda.id_demanda}}</th>
+                <th>{{demanda.id_caso}}</th>
                 <th>{{demanda.titulo}}</th>
                 <th>{{demanda.nombre_tipo}}</th>
                 <th>{{demanda.nombre}} {{demanda.apellido}}</th>
                 <th>{{demanda.created}}</th>
                 <th>{{demanda.updated}}</th>
+                <th>
+                  <a  class="button_1" href="{% url 'verdemanda' demanda.id_demanda %}">Ver</a>  
+                </th>
+            
             </tr>
+            
             {% endfor %}
        
             

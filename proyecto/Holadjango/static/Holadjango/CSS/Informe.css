@@ -79,6 +79,12 @@ textarea {
   margin-top: 10px;
 }
 
+.demanda_title{
+  margin-top: 10px;
+  min-height:36px !important;
+  max-height:36px !important;
+}
+
 .fake-textarea {
   border: 1px solid white;
   background-color: white;

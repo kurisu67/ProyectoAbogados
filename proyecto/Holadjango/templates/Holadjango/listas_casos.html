@@ -10,6 +10,21 @@
     <title>Listas</title>
     <link rel="stylesheet" href="{% static 'Holadjango/CSS/lista.css' %}">
 
+    <style>
+      .button_1{
+    padding-top: 10px;
+    text-decoration: none;
+    background-color: #bfb941;
+    border-radius: 6px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 5px;
+    color: rgb(0, 0, 0);
+  }
+
+      </style>
+
 </head>
 
 
@@ -24,7 +39,7 @@
       <il><a href="{% url 'listas_casos' %}">Lista Casos</a></il>
       <il><a href="{% url 'ultimademanda' %}">Ultimo Caso</a></il>
       <il><a href="{% url 'reabrircaso'%}">Reabrir Caso</a></il>
-      <il><a href="{% url 'index' %}">Cerrar Sesion</a></il>
+      <il><a href="{% url 'Logout' %}">Cerrar Sesion</a></il>
     </ul>
     </div>
 
@@ -34,9 +49,9 @@
           <tr>
             <th>Id</th>
             <th>Titulo</th>
-            <th>Cantidad de demandas</th>
             <th>Creado</th>
             <th>Actualizado</th>
+            <th>Opciones</th>
           </tr>
         </thead>
             {% for caso in  listaas %}
@@ -46,9 +61,11 @@
             <tr>
                 <th>{{caso.id_caso}}</th>
                 <th>{{caso.titulo}}</th>
-                <th>{{caso.cantidad_demandas}}</th>
                 <th>{{caso.created}}</th>
                 <th>{{caso.updated}}</th>
+                <th>
+                  <a  class="button_1" href="{% url 'vercaso' caso.id_caso %}">Ver</a>  
+                </th>
             </tr>
             {% endfor %}
        

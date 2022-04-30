@@ -1,43 +1,26 @@
 from django.db import models
+from django.contrib.auth.models import User
 # Create your models here.
-region=[
-    (1,"Región de tarapacá"),
-    (2,"Region pete")
-]
-tipo= [
-    (1, "Primer tipo"),
-    (2, "Segundo tipo"),
-    (3, "Tercer tipo")
-]
-class informe2(models.Model):
-    id_informe=models.BigAutoField(primary_key=True)
-    titulo=models.CharField(max_length=20)
-    descripcion=models.CharField(max_length=1000)
-    created=models.DateTimeField(auto_now_add=True)
-    updated=models.DateTimeField(auto_now_add=True)
-    class Meta:
-        verbose_name= 'informe2'
-        verbose_name_plural= 'informes2'
 
-        
-    def __str__(self):
-        return str(self.id_informe)
+
 
 class caso(models.Model):
+     
     id_caso=models.BigAutoField(primary_key=True)
     titulo=models.CharField(max_length=20)
-    cantidad_demandas=models.CharField(max_length=50)
     descripcion=models.CharField(max_length=1000)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now_add=True)
+    usuario=models.ForeignKey(User, on_delete=models.CASCADE)
+    
+
     class Meta:
         verbose_name= 'caso'
         verbose_name_plural= 'casos'
 
         
     def __str__(self):
-        return str(self.id_caso)    
-
+        return str(self.titulo)    
 
 
 class demanda(models.Model):
@@ -59,7 +42,7 @@ class demanda(models.Model):
     regiondemando=models.CharField(max_length=50)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now_add=True)
-
+    id_caso=models.ForeignKey(caso, on_delete=models.CASCADE)
     
     class Meta:
         verbose_name= 'demanda'
@@ -67,11 +50,20 @@ class demanda(models.Model):
 
         
     def __str__(self):
-        return str(self.id_demanda)
+        return str(self.titulo)
 
 
+class informe2(models.Model):
+    id_informe=models.BigAutoField(primary_key=True)
+    titulo=models.CharField(max_length=20)
+    descripcion=models.CharField(max_length=1000)
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now_add=True)
+    id_demanda=models.ForeignKey(demanda, on_delete=models.CASCADE)
+    class Meta:
+        verbose_name= 'informe2'
+        verbose_name_plural= 'informes2'
 
-class nombre (models.Model):
-    nombre= models.CharField(max_length=100)
+        
     def __str__(self):
-        return str(self.nombre)
+        return str(self.id_informe)

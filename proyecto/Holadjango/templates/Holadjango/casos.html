@@ -43,11 +43,6 @@
               
               <div class="column">
                 <div class="items_ejemple cant_dem">
-                  <label>Cantidad de demandas:</label>
-                  <br>
-                  {{form.cantidad_demandas}}
-                </div>
-                <div class="items_ejemple cant_dem">
                   <label>Titulo:</label>
                   <br>
                   {{form.titulo}}
@@ -56,11 +51,9 @@
                   <div >
                     <label>Descripcion:</label>
                   </div>
-        
-                    
                     {{form.descripcion}}
                 </div>
-              
+                
               
             </div>
            </div>
@@ -70,6 +63,8 @@
 
 
           </fieldset>
+
+          <input type="hidden" name="usuario" value="{{user.id}}">
 
         </div>
         <div style="text-align:center;">

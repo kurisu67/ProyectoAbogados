@@ -6,13 +6,13 @@ class informeform(forms.ModelForm):
 
     class Meta:
         model = informe2
-        fields =["titulo","descripcion"]
+        fields =["titulo","descripcion","id_demanda"]
 
 
 class casoform(forms.ModelForm):
     class Meta:
         model = caso
-        fields =[ "cantidad_demandas","titulo","descripcion"]
+        fields =[ "titulo","descripcion","usuario"]
         
 
 class demandaform(forms.ModelForm):
@@ -34,7 +34,8 @@ class demandaform(forms.ModelForm):
             "apellidodemando",
             "telefonodemando",
             "comunademando",
-            "regiondemando"]
+            "regiondemando",
+            "id_caso"]
         
 
 

@@ -20,6 +20,11 @@ urlpatterns = [
     path('modificardemanda/<id>/', views.modificardemanda, name="modificardemanda"),
     path('eliminardemanda/<id>/', views.eliminardemanda, name="eliminardemanda"),
     path('eliminarinforme/<id>/', views.eliminarinforme, name="eliminarinforme"),
+    path('verdemanda/<id>/', views.verdemanda, name="verdemanda"),
+    path('verinforme/<id>/', views.verinforme, name="verinforme"),
+    path('vercaso/<id>/', views.vercaso, name="vercaso"),
+    path('logout/', views.logout_view, name="Logout"),
+
     
     
 ]

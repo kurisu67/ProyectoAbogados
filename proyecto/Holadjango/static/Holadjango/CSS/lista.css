@@ -35,7 +35,11 @@ table {
     width: 100%;
     background-color: white;
     border-collapse: collapse;
-    margin-top: 50px !important;
+    margin-top: 110px !important;
+    /** añadirlos en el **/
+    top: 240px;
+    position: fixed;
+
 }
 
 tr:nth-child(even) {

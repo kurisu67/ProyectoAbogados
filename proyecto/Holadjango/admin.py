@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import demanda, informe2, caso, nombre
+from .models import demanda, informe2, caso
 # Register your models here.
 
 
@@ -12,4 +12,4 @@ admin.site.register(informe2)
 
 
 admin.site.register(caso)
-admin.site.register(nombre)
+
