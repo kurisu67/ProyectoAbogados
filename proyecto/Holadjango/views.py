@@ -1,7 +1,7 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, HttpResponse
 from Holadjango.models import caso, demanda, informe2 
-from .forms import informeform,demandaform, nombreForm, casoform
+from .forms import informeform,demandaform, casoform
 from django.shortcuts import render, redirect   
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -164,7 +164,7 @@ def eliminardemanda(request,id):
     reabrir.delete()
     return redirect(to="reabrirdemanda")
 
-@login_required
+
 def modificarinforme(request,id):
     reabrir = informe2.objects.get(id_informe=id)
     data = {'form': informeform(instance=reabrir)}

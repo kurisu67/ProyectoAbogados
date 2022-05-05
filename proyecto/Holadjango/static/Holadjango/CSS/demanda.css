@@ -143,9 +143,10 @@ textarea {
   margin-top: 10px;
 }
 
-.caso_title{
+.caso_title select{
   margin-top: 10px;
   min-height:36px !important;
+  min-width:170px !important;
   max-height:36px !important;
 }
 .fake-textarea {
